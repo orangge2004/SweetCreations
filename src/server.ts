@@ -39,7 +39,7 @@ app.get('/', (_req, res) => {
   </head>
   <body>
     <h1>SweetCreations</h1>
-    <p>Catálogo en construcción. Pronto podrás ver nuestros postres.</p>
+    <p>¡Próximamente los mejores postres de Caracas!</p>
   </body>
 </html>`);
 });
