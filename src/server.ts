@@ -46,6 +46,12 @@ app.get('/', (_req, res) => {
 });
 
 // Cualquier ruta no definida responde 404, sin filtrar detalles internos.
+app.get('/about', (_req, res) => {
+  res.status(200).type('html').send(`
+    <!-- aquí va tu HTML -->
+  `);
+});
+
 app.use((_req, res) => {
   res.status(404).type('text').send('No encontrado');
 });
@@ -53,3 +59,4 @@ app.use((_req, res) => {
 app.listen(port, host, () => {
   console.log(`Servidor en http://${host}:${port}`);
 });
+
