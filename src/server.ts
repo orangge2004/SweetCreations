@@ -46,9 +46,12 @@ app.get('/', (_req, res) => {
 });
 
 // Cualquier ruta no definida responde 404, sin filtrar detalles internos.
+
 app.get('/about', (_req, res) => {
   res.status(200).type('html').send(`
-    <!-- aquí va tu HTML -->
+    <h1>Sobre SweetCreations</h1>
+<p>Repostería artesanal en Caracas.</p>
+<p><a href="/">Volver al inicio</a></p>
   `);
 });
 
