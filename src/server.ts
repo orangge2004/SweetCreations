@@ -47,6 +47,10 @@ app.get('/about', (_req, res) => {
   res.status(200).render('about', { title: 'Sobre SweetCreations' });
 });
 
+app.get('/contacto', (_req, res) => {
+  res.status(200).render('contacto', { title: 'Contacto - SweetCreations' });
+});
+
 // 404
 app.use((_req, res) => {
   res.status(404).type('text').send('No encontrado');
