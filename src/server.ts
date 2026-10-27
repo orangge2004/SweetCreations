@@ -1,6 +1,7 @@
 import express from 'express';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import expressLayouts from 'express-ejs-layouts';
 
 const app = express();
 
@@ -8,15 +9,18 @@ const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// No revelar que el servidor usa Express
+// Seguridad básica
 app.disable('x-powered-by');
 
-// Límite defensivo para futuros cuerpos JSON
+// Middlewares
 app.use(express.json({ limit: '10kb' }));
+app.use(express.static(path.join(__dirname, '../public')));
 
-// Configuración de EJS
+// Configuración de EJS + layouts
+app.use(expressLayouts);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+app.set('layout', 'layouts/main');
 
 const rawPort = process.env.PORT ?? '3000';
 const port = Number(rawPort);
@@ -36,14 +40,14 @@ app.get('/health', (_req, res) => {
 });
 
 app.get('/', (_req, res) => {
-  res.status(200).render('home');
+  res.status(200).render('home', { title: 'Inicio - SweetCreations' });
 });
 
 app.get('/about', (_req, res) => {
-  res.status(200).render('about');
+  res.status(200).render('about', { title: 'Sobre SweetCreations' });
 });
 
-// Cualquier ruta no definida responde 404
+// 404
 app.use((_req, res) => {
   res.status(404).type('text').send('No encontrado');
 });
@@ -51,4 +55,3 @@ app.use((_req, res) => {
 app.listen(port, host, () => {
   console.log(`Servidor en http://${host}:${port}`);
 });
-
