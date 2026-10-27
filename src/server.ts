@@ -1,12 +1,22 @@
 import express from 'express';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const app = express();
 
-// No revelar que el servidor usa Express (reduce fingerprinting).
+// Necesario para usar __dirname con ES Modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// No revelar que el servidor usa Express
 app.disable('x-powered-by');
 
-// Límite defensivo para futuros cuerpos JSON.
+// Límite defensivo para futuros cuerpos JSON
 app.use(express.json({ limit: '10kb' }));
+
+// Configuración de EJS
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
 const rawPort = process.env.PORT ?? '3000';
 const port = Number(rawPort);
@@ -15,7 +25,6 @@ if (!Number.isInteger(port) || port < 1 || port > 65535) {
   throw new Error(`PORT inválido: ${rawPort}`);
 }
 
-// En local escuchamos solo en loopback; en producción se configura HOST=0.0.0.0.
 const host = process.env.HOST ?? '127.0.0.1';
 
 app.get('/health', (_req, res) => {
@@ -27,34 +36,14 @@ app.get('/health', (_req, res) => {
 });
 
 app.get('/', (_req, res) => {
-  res
-    .status(200)
-    .type('html')
-    .send(`<!doctype html>
-<html lang="es">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SweetCreations</title>
-  </head>
-  <body>
-    <h1>SweetCreations</h1>
-    <p>Próximamente los mejores postres de Caracas!</p>
-    <p><a href="/health"> Ver estado del servidor</a></p>
-  </body>
-</html>`);
+  res.status(200).render('home');
 });
-
-// Cualquier ruta no definida responde 404, sin filtrar detalles internos.
 
 app.get('/about', (_req, res) => {
-  res.status(200).type('html').send(`
-    <h1>Sobre SweetCreations</h1>
-<p>Repostería artesanal en Caracas.</p>
-<p><a href="/">Volver al inicio</a></p>
-  `);
+  res.status(200).render('about');
 });
 
+// Cualquier ruta no definida responde 404
 app.use((_req, res) => {
   res.status(404).type('text').send('No encontrado');
 });
