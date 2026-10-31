@@ -60,3 +60,15 @@ nav a:hover {
 .page a:hover {
   text-decoration: underline;
 }
+
+footer {
+  background-color: #cb9fd6;
+  text-align: center;
+  color: #ffffff;
+  margin-top: 4rem;
+}
+
+footer p {
+  margin: 0;
+  padding: 0.9rem;
+}
