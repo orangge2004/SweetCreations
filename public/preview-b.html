@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Opción B — Artesanal & Cálida | SweetCreations</title>
+  <style>
+    :root { --brand:#cb9fd6; --choco:#6b4f3f; --cream:#fff8f1; --bg:#fffcf8; --text:#3e342f; --muted:#7a6a60; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Georgia, "Times New Roman", serif; color:var(--text); background:var(--bg); }
+    header { background:var(--choco); color:#fff; }
+    nav { max-width:1100px; margin:0 auto; padding:1rem 1.25rem; display:flex; justify-content:center; gap:1.5rem; flex-wrap:wrap; }
+    nav a { color:#fff3e8; text-decoration:none; font-family: system-ui, sans-serif; font-weight:600; font-size:.95rem; }
+    nav a.active { color:#fff; border-bottom:2px solid var(--brand); }
+    .hero { background:linear-gradient(180deg, var(--cream), var(--bg)); text-align:center; padding:4rem 1.25rem 3rem; }
+    .hero h1 { font-size:clamp(2rem,5vw,3rem); margin:0 0 .75rem; color:var(--choco); font-weight:700; }
+    .hero p { font-family: system-ui, sans-serif; color:var(--muted); font-size:1.1rem; max-width:680px; margin:0 auto 1.5rem; }
+    .btn { display:inline-block; background:var(--brand); color:#fff; padding:.8rem 1.4rem; border-radius:10px; text-decoration:none; font-family: system-ui, sans-serif; font-weight:700; }
+    .wrap { max-width:1100px; margin:0 auto; padding:1.5rem 1.25rem 3rem; }
+    .section-title { text-align:center; color:var(--choco); margin:.5rem 0 1.5rem; font-size:1.7rem; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.25rem; }
+    .card { background:#fff; border:1px solid #eadfce; border-radius:14px; overflow:hidden; }
+    .ph { height:180px; background:linear-gradient(135deg,#f6e8f1,#efe3d5); display:flex; align-items:center; justify-content:center; color:#8a6a58; font-family: system-ui, sans-serif; font-weight:600; }
+    .body { padding:1rem 1rem 1.1rem; font-family: system-ui, sans-serif; }
+    .body h3 { margin:0 0 .35rem; color:var(--choco); }
+    .body p { margin:0 0 .6rem; color:var(--muted); font-size:.95rem; }
+    .price { font-weight:800; color:var(--choco); margin-bottom:.8rem; }
+    .card .btn { width:100%; text-align:center; }
+    .badge { display:inline-block; margin-bottom:1rem; padding:.35rem .75rem; background:#fff; color:var(--choco); border:1px solid #eadfce; border-radius:999px; font-family: system-ui, sans-serif; font-size:.85rem; font-weight:700; }
+  </style>
+</head>
+<body>
+  <header><nav><a class="active" href="#">Inicio</a><a href="#">Catálogo</a><a href="#">Sobre</a><a href="#">Contacto</a></nav></header>
+  <section class="hero">
+    <span class="badge">Opción B — Artesanal & Cálida</span>
+    <h1>Hecho a mano, con sabor casero</h1>
+    <p>Crema + chocolate + acento #cb9fd6. Sensación de pastelería artesanal, cálida y confiable.</p>
+    <a class="btn" href="#">Ver catálogo</a>
+  </section>
+  <div class="wrap">
+    <h2 class="section-title">Nuestros postres</h2>
+    <div class="grid">
+      <article class="card"><div class="ph">Foto</div><div class="body"><h3>Torta de Chocolate</h3><p>Bizcocho húmedo con ganache.</p><div class="price">USD 15.00</div><a class="btn" href="#">Pedir por WhatsApp</a></div></article>
+      <article class="card"><div class="ph">Foto</div><div class="body"><h3>Cupcakes</h3><p>Caja de 6, vainilla y crema.</p><div class="price">USD 12.00</div><a class="btn" href="#">Pedir por WhatsApp</a></div></article>
+      <article class="card"><div class="ph">Foto</div><div class="body"><h3>Quesillo</h3><p>Clásico casero con caramelo.</p><div class="price">USD 10.00</div><a class="btn" href="#">Pedir por WhatsApp</a></div></article>
+    </div>
+  </div>
+</body>
+</html>
