@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="450" viewBox="0 0 600 450">
+  <rect width="600" height="450" fill="#f3e5f5"/>
+  <ellipse cx="300" cy="250" rx="170" ry="90" fill="#ffcc80"/>
+  <ellipse cx="300" cy="230" rx="150" ry="70" fill="#ffe082"/>
+  <ellipse cx="300" cy="215" rx="70" ry="30" fill="#d84315" opacity="0.25"/>
+  <text x="300" y="410" font-family="Arial, sans-serif" font-size="28" fill="#6b4f3f" text-anchor="middle">Quesillo</text>
+</svg>

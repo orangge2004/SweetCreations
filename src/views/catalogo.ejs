@@ -1,0 +1,20 @@
+<section class="catalog">
+  <h1>Catálogo</h1>
+  <p class="catalog-intro">Elige tu postre favorito y coordina tu pedido por WhatsApp.</p>
+
+  <div class="catalog-grid">
+    <% products.forEach(function(product) { %>
+      <% const message = encodeURIComponent('Hola, quiero pedir: ' + product.name); %>
+      <% const whatsappUrl = 'https://wa.me/' + whatsappNumber + '?text=' + message; %>
+      <article class="product-card">
+        <img src="<%= product.image %>" alt="<%= product.name %>" loading="lazy">
+        <div class="product-body">
+          <h2><%= product.name %></h2>
+          <p class="product-desc"><%= product.description %></p>
+          <p class="product-price">USD <%= product.priceUsd.toFixed(2) %></p>
+          <a class="btn-whatsapp" href="<%= whatsappUrl %>" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </div>
+      </article>
+    <% }); %>
+  </div>
+</section>

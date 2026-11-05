@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="450" viewBox="0 0 600 450">
+  <rect width="600" height="450" fill="#f3e5f5"/>
+  <rect x="150" y="220" width="300" height="140" rx="12" fill="#6b4f3f"/>
+  <rect x="170" y="180" width="260" height="50" rx="10" fill="#8d6e63"/>
+  <circle cx="240" cy="170" r="14" fill="#cb9fd6"/>
+  <circle cx="300" cy="160" r="14" fill="#cb9fd6"/>
+  <circle cx="360" cy="170" r="14" fill="#cb9fd6"/>
+  <text x="300" y="410" font-family="Arial, sans-serif" font-size="28" fill="#6b4f3f" text-anchor="middle">Torta de Chocolate</text>
+</svg>

@@ -3,6 +3,43 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import expressLayouts from 'express-ejs-layouts';
 
+type Product = {
+  name: string;
+  priceUsd: number;
+  description: string;
+  image: string;
+};
+
+// Número de WhatsApp en formato internacional (solo dígitos, sin +). Actualizar cuando se tenga el real.
+const WHATSAPP_NUMBER = '0000000000';
+
+const products: Product[] = [
+  {
+    name: 'Torta de Chocolate',
+    priceUsd: 15,
+    description: 'Bizcocho húmedo con cobertura de chocolate.',
+    image: '/images/products/torta-chocolate.svg',
+  },
+  {
+    name: 'Cupcakes de Vainilla',
+    priceUsd: 12,
+    description: 'Caja de 6 cupcakes suaves con crema de vainilla.',
+    image: '/images/products/cupcakes-vainilla.svg',
+  },
+  {
+    name: 'Quesillo',
+    priceUsd: 10,
+    description: 'Clásico quesillo casero con caramelo.',
+    image: '/images/products/quesillo.svg',
+  },
+  {
+    name: 'Brownies',
+    priceUsd: 8,
+    description: 'Brownies de chocolate, suaves por dentro.',
+    image: '/images/products/brownies.svg',
+  },
+];
+
 const app = express();
 
 // Necesario para usar __dirname con ES Modules
@@ -49,6 +86,14 @@ app.get('/about', (_req, res) => {
 
 app.get('/contacto', (_req, res) => {
   res.status(200).render('contacto', { title: 'Contacto - SweetCreations' });
+});
+
+app.get('/catalogo', (_req, res) => {
+  res.status(200).render('catalogo', {
+    title: 'Catálogo - SweetCreations',
+    products,
+    whatsappNumber: WHATSAPP_NUMBER,
+  });
 });
 
 // 404

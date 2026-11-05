@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="450" viewBox="0 0 600 450">
+  <rect width="600" height="450" fill="#f3e5f5"/>
+  <rect x="120" y="240" width="90" height="110" rx="8" fill="#f8bbd0"/>
+  <ellipse cx="165" cy="230" rx="55" ry="35" fill="#fff8e1"/>
+  <circle cx="165" cy="205" r="10" fill="#cb9fd6"/>
+  <rect x="255" y="240" width="90" height="110" rx="8" fill="#f8bbd0"/>
+  <ellipse cx="300" cy="230" rx="55" ry="35" fill="#fff8e1"/>
+  <circle cx="300" cy="205" r="10" fill="#cb9fd6"/>
+  <rect x="390" y="240" width="90" height="110" rx="8" fill="#f8bbd0"/>
+  <ellipse cx="435" cy="230" rx="55" ry="35" fill="#fff8e1"/>
+  <circle cx="435" cy="205" r="10" fill="#cb9fd6"/>
+  <text x="300" y="410" font-family="Arial, sans-serif" font-size="28" fill="#6b4f3f" text-anchor="middle">Cupcakes de Vainilla</text>
+</svg>
